@@ -26,14 +26,14 @@
             let count = 0;
             let reset = 0;
 
-            this.start = function (x) {
+            return function startCount (x) {
                 initial = x;
                 return count = x;
             };
-            this.step = function (x) {
+            return function stepCount (x) {
                 return count += x;
             };
-            this.resetCount = function () {
+            return function resetCount () {
                 return reset;
             }
         }
