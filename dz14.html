@@ -22,24 +22,18 @@
         
         
         
-        function Counter() {
-            let count = 0;
-            let reset = 0;
+        function createCount(initial = 0, step = 1) {
+            let count = initial;
 
-            return function startCount (x) {
-                initial = x;
-                return count = x;
-            };
-            return function stepCount (x) {
-                return count += x;
-            };
-            return function resetCount () {
-                return reset;
+            function counter () {
+                return count += step;
+                
             }
+            counter.reset = function () {
+                count = initial;
+            }
+            return counter;
         }
-
-        let counter = new Counter();
-
 
 
     </script>
